@@ -22,6 +22,9 @@ public class ProductBacklogService {
     public ProductBacklog findProductBacklogByProjetId(Long id){
         return this.productBacklogRepository.findProductBacklogByProjetId(id);
     }
+    public ProductBacklog createNewProductBacklog(ProductBacklog backlog) {
+        return productBacklogRepository.save(backlog);
+    }
 
 }
 

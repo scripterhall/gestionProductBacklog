@@ -6,10 +6,9 @@ import com.ms.gestionProductBacklog.gestionproductbacklog.models.Projet;
 import com.ms.gestionProductBacklog.gestionproductbacklog.services.ProductBacklogService;
 import com.ms.gestionProductBacklog.gestionproductbacklog.services.ProjetClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.sql.SQLException;
@@ -57,6 +56,12 @@ public class ProductBacklogController {
     public List<HistoireTicket> getHistoireTicketsByProductBacklogId(@PathVariable Long productBacklogId) {
         String url = "http://localhost:9999/gestion-histoire-ticket/histoireTickets/product-backlog/" + productBacklogId;
         return restTemplate.getForObject(url, List.class);
+    }
+    @PostMapping
+    public ResponseEntity<ProductBacklog> create(@RequestBody ProductBacklog backlog, @RequestParam Long projectId) {
+        backlog.setProjetId(projectId);
+        ProductBacklog createdBacklog = productBacklogService.createNewProductBacklog(backlog);
+        return new ResponseEntity<>(createdBacklog, HttpStatus.CREATED);
     }
 
 }
