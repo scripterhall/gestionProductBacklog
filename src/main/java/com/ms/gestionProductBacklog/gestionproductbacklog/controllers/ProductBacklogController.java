@@ -55,14 +55,6 @@ public class ProductBacklogController {
         return new ResponseEntity<>(createdBacklog, HttpStatus.CREATED);
     }
 
-    /*@PutMapping
-    public ResponseEntity<String> elevateProductBacklogVelocity(@RequestBody Map<String, Long> requestBody) {
-        Long productBacklogId = requestBody.get("productBacklogId");
-        Long histoireTicketId = requestBody.get("histoireTicketId");
-        productBacklogService.elevateProductBacklogVelocity(productBacklogId, histoireTicketId);
-        return ResponseEntity.ok("Effort added to Product Backlog velocity");
-    }*/
-
     @PutMapping
     public ResponseEntity<String> elevateProductBacklogVelocity(@RequestBody Map<String, Object> request) {
         Long productBacklogId = Long.parseLong(request.get("productBacklogId").toString());

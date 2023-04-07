@@ -27,15 +27,6 @@ public class ProductBacklogService {
         return productBacklogRepository.save(backlog);
     }
 
-    /*public void elevateProductBacklogVelocity(Long productBacklogId, Long histoireTicketId) {
-        HistoireTicket histoireTicket = ticketHistoireService.findUserStoryById(histoireTicketId);
-        ProductBacklog productBacklog = productBacklogRepository.findById(productBacklogId).orElse(null);
-        if (productBacklog != null && histoireTicket != null) {
-            productBacklog.setVelocite(productBacklog.getVelocite() + histoireTicket.getEffort());
-            productBacklogRepository.save(productBacklog);
-        }
-    }*/
-
     public void elevateProductBacklogVelocity(Long productBacklogId, int effort) throws ChangeSetPersister.NotFoundException {
         Optional<ProductBacklog> productBacklogOptional = productBacklogRepository.findById(productBacklogId);
 
