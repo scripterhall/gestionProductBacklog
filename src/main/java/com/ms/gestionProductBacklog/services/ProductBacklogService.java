@@ -1,8 +1,8 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.services;
+package com.ms.gestionProductBacklog.services;
 
-import com.ms.gestionProductBacklog.gestionproductbacklog.entities.ProductBacklog;
-import com.ms.gestionProductBacklog.gestionproductbacklog.models.HistoireTicket;
-import com.ms.gestionProductBacklog.gestionproductbacklog.repositories.ProductBacklogRepository;
+import com.ms.gestionProductBacklog.entities.ProductBacklog;
+import com.ms.gestionProductBacklog.models.HistoireTicket;
+import com.ms.gestionProductBacklog.repositories.ProductBacklogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;

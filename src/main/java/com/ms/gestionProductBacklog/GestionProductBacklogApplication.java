@@ -1,6 +1,6 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog;
+package com.ms.gestionProductBacklog;
 
-import com.ms.gestionProductBacklog.gestionproductbacklog.entities.ProductBacklog;
+import com.ms.gestionProductBacklog.entities.ProductBacklog;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

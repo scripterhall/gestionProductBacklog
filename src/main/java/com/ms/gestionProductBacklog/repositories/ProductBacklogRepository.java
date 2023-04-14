@@ -1,6 +1,6 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.repositories;
+package com.ms.gestionProductBacklog.repositories;
 
-import com.ms.gestionProductBacklog.gestionproductbacklog.entities.ProductBacklog;
+import com.ms.gestionProductBacklog.entities.ProductBacklog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
