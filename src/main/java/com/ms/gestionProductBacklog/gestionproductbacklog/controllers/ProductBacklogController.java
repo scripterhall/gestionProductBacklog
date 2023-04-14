@@ -31,7 +31,6 @@ public class ProductBacklogController {
         try {
             return this.productBacklogService.getProductBacklogById(id);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null ;
@@ -45,7 +44,7 @@ public class ProductBacklogController {
     }
     @GetMapping("/{productBacklogId}/histoiresTickets")
     public List<HistoireTicket> getHistoireTicketsByProductBacklogId(@PathVariable Long productBacklogId) {
-        String url = "http://localhost:9999/gestion-histoire-ticket/histoireTickets/product-backlog/" + productBacklogId;
+        String url = "http://localhost:9999/gestion-histoire-ticket/histoireTickets/productBacklog/" + productBacklogId;
         return restTemplate.getForObject(url, List.class);
     }
     @PostMapping

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
+
 @Data
 @ToString
 @NoArgsConstructor
@@ -14,4 +16,5 @@ public class HistoireTicket {
     private String priorite;
     private int effort;
     private int position;
+    private Date dateFin;
 }
