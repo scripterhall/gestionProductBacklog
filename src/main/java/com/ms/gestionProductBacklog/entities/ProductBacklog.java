@@ -1,7 +1,7 @@
 package com.ms.gestionProductBacklog.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import com.ms.gestionProductBacklog.models.Projet;
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,7 +17,7 @@ public class ProductBacklog extends Backlog{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //L'identifiant du product backlog
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    
     @Column(unique = true)
     private Long projetId;
     @Transient
