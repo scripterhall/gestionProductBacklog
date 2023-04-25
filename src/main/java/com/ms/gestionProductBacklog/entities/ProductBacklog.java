@@ -1,12 +1,10 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.entities;
+package com.ms.gestionProductBacklog.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ms.gestionProductBacklog.gestionproductbacklog.models.Projet;
+import com.ms.gestionProductBacklog.models.Projet;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Date;
 
 @Entity
 @Table(name="product_backlog")

@@ -1,4 +1,4 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.entities;
+package com.ms.gestionProductBacklog.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 

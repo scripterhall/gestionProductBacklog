@@ -1,4 +1,4 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.models;
+package com.ms.gestionProductBacklog.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,10 +11,10 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Projet {
+public class HistoireTicket {
     private Long id;
-    private String nom;
-    private String cles;
-    private Date dateDebut;
+    private String priorite;
+    private int effort;
+    private int position;
     private Date dateFin;
 }

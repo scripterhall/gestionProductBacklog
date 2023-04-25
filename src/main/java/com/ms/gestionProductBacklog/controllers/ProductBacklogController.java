@@ -1,10 +1,10 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.controllers;
+package com.ms.gestionProductBacklog.controllers;
 
-import com.ms.gestionProductBacklog.gestionproductbacklog.entities.ProductBacklog;
-import com.ms.gestionProductBacklog.gestionproductbacklog.models.HistoireTicket;
-import com.ms.gestionProductBacklog.gestionproductbacklog.models.Projet;
-import com.ms.gestionProductBacklog.gestionproductbacklog.services.ProductBacklogService;
-import com.ms.gestionProductBacklog.gestionproductbacklog.services.ProjetClientService;
+import com.ms.gestionProductBacklog.entities.ProductBacklog;
+import com.ms.gestionProductBacklog.models.HistoireTicket;
+import com.ms.gestionProductBacklog.models.Projet;
+import com.ms.gestionProductBacklog.services.ProductBacklogService;
+import com.ms.gestionProductBacklog.services.ProjetClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.sql.SQLException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 

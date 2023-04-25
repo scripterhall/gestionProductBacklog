@@ -1,6 +1,6 @@
-package com.ms.gestionProductBacklog.gestionproductbacklog.services;
+package com.ms.gestionProductBacklog.services;
 
-import com.ms.gestionProductBacklog.gestionproductbacklog.models.Projet;
+import com.ms.gestionProductBacklog.models.Projet;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
