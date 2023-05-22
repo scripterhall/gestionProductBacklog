@@ -2,23 +2,35 @@ package com.ms.gestionProductBacklog.services;
 
 import com.ms.gestionProductBacklog.entities.ProductBacklog;
 import com.ms.gestionProductBacklog.models.HistoireTicket;
+import com.ms.gestionProductBacklog.models.Projet;
 import com.ms.gestionProductBacklog.repositories.ProductBacklogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ProductBacklogService {
+
+    @Autowired
+    private ProjetClientService projetClientService;
+
     @Autowired
     private ProductBacklogRepository productBacklogRepository;
     @Autowired
     private TicketHistoireService ticketHistoireService;
     public ProductBacklog getProductBacklogById(Long id) throws SQLException {
-        return productBacklogRepository.findById(id).get();
+        ProductBacklog productBacklog = productBacklogRepository.findById(id).get();
+        if(productBacklog.getProjetId()!=null){
+            Projet p = projetClientService.findProjetById(productBacklog.getProjetId());
+           
+            productBacklog.setProjetId(p.getId());
+            productBacklog.setProjet(p);
+        }
+        return productBacklog;
+
     }
     public ProductBacklog findProductBacklogByProjetId(Long id){
         return this.productBacklogRepository.findProductBacklogByProjetId(id);
