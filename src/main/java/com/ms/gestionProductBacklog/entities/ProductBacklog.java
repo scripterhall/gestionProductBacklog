@@ -1,7 +1,7 @@
 package com.ms.gestionProductBacklog.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import com.ms.gestionProductBacklog.models.Projet;
 import jakarta.persistence.*;

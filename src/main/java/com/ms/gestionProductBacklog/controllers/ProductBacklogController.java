@@ -5,6 +5,8 @@ import com.ms.gestionProductBacklog.models.HistoireTicket;
 import com.ms.gestionProductBacklog.models.Projet;
 import com.ms.gestionProductBacklog.services.ProductBacklogService;
 import com.ms.gestionProductBacklog.services.ProjetClientService;
+import com.ms.gestionProductBacklog.services.TicketHistoireService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,9 @@ public class ProductBacklogController {
     private ProductBacklogService productBacklogService;
     @Autowired
     private ProjetClientService projetClientService;
+
+    @Autowired
+    private TicketHistoireService ticketHistoireService;
     @Autowired
     private RestTemplate restTemplate;
     @GetMapping("/{id}")
@@ -43,8 +48,7 @@ public class ProductBacklogController {
     }
     @GetMapping("/{productBacklogId}/histoiresTickets")
     public List<HistoireTicket> getHistoireTicketsByProductBacklogId(@PathVariable Long productBacklogId) {
-        String url = "http://localhost:9999/gestion-histoire-ticket/histoireTickets/productBacklog/" + productBacklogId;
-        return restTemplate.getForObject(url, List.class);
+       return this.ticketHistoireService.findTicketHistoireByProductBacklog(productBacklogId);
     }
     @PostMapping
     public ResponseEntity<ProductBacklog> create(@RequestBody ProductBacklog backlog, @RequestParam Long projectId) {
